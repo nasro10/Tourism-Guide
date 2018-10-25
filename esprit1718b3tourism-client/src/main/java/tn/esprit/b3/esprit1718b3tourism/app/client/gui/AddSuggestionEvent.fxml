@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.b3.esprit1718b3tourism.app.client.gui.AddSuggestionEventController">
+   <children>
+      <Label layoutX="216.0" layoutY="24.0" prefHeight="27.0" prefWidth="168.0" text="Suggestion Event" textFill="#1cdaba">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="47.0" layoutY="127.0" text="Event'sName:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="51.0" layoutY="193.0" text="Description:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="47.0" layoutY="280.0" text="Available Places:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="51.0" layoutY="335.0" text="Price:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="eventname" layoutX="165.0" layoutY="112.0" />
+      <JFXTextArea fx:id="description" layoutX="165.0" layoutY="165.0" prefHeight="38.0" prefWidth="248.0" />
+      <JFXTextField fx:id="availableplaces" layoutX="165.0" layoutY="333.0" />
+      <JFXTextField fx:id="price" layoutX="165.0" layoutY="278.0" />
+      <JFXButton fx:id="btadd" layoutX="138.0" layoutY="466.0" onAction="#ajouterevent" prefHeight="39.0" prefWidth="157.0" text="Confirm" textFill="#1cdaba">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="51.0" layoutY="400.0" text="Sponsorship Money:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="sponsorshipmoney" layoutX="184.0" layoutY="398.0" />
+      <TableView fx:id="tab" layoutX="462.0" layoutY="45.0" prefHeight="383.0" prefWidth="737.0">
+        <columns>
+          <TableColumn fx:id="name" prefWidth="118.0" text="Name" />
+          <TableColumn fx:id="desc" prefWidth="152.0" text="Description" />
+            <TableColumn fx:id="places" prefWidth="155.0" text="Available places" />
+            <TableColumn fx:id="status" text="status" />
+            <TableColumn fx:id="prices" minWidth="0.0" prefWidth="99.0" text="price" />
+            <TableColumn fx:id="money" prefWidth="132.0" text="sponsorship money" />
+        </columns>
+      </TableView>
+      <JFXButton fx:id="delete" layoutX="772.0" layoutY="473.0" onAction="#supprimer" text="Delete" textFill="#1cdaba">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

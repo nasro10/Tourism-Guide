@@ -1,0 +1,49 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/templateClient/essai3.xhtml"
+	 xmlns:p="http://primefaces.org/ui">>
+
+	<ui:define name="pageTitle">
+				Imc
+			</ui:define>
+	<ui:define name="pageContent">
+
+		<div class="centredZone">
+			
+			<h:form>
+				<h:panelGrid columns="2" styleClass="centredForm">
+				<h:outputText value="Votre taille: " />
+				<h:inputText value="#{imcBean.taille}" />
+				<h:outputText value="Votre poids: " />
+				<h:inputText value="#{imcBean.poids}" />
+				<h:commandButton action="#{imcBean.afficheImc()}" value="Calculer Imc" />
+				<br></br>
+				<h:outputText value="Votre IMC est: " />
+				
+				<h:inputText value="#{imcBean.result}" />
+				</h:panelGrid>
+				<h:panelGrid columns="2" styleClass="centredForm">
+				<h:commandButton action="#{imcBean.affiche()}" value="Les plats adequats sont :" />
+				<br> </br>
+				<p:dataTable var="car" value="#{imcBean.lsPlat}">
+				<p:column headerText="Name">
+			
+        		<h:outputText value="#{car.platName}" />
+    			</p:column>
+    			<p:column>|</p:column>
+    			<p:column headerText="Price">
+       			 <h:outputText value="#{car.price}" />
+    			</p:column>
+    			<p:column>|</p:column>
+    	  		<p:column headerText="Type">
+       			 <h:outputText value="#{car.type}" />
+    			</p:column>
+				</p:dataTable>
+				</h:panelGrid>
+			</h:form>
+		</div>
+
+	</ui:define>
+</ui:composition>

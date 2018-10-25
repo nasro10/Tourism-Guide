@@ -1,0 +1,30 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	template="/templateClient/essai3.xhtml">
+
+	<ui:define name="pageTitle">
+				CommenterPlat
+			</ui:define>
+	<ui:define name="pageContent">
+
+	
+			
+			<h:form>
+			
+			<h:outputText value="Your comment :" />
+			<h:inputText value="#{commenterPlatBean.commentaire}" />
+			<h:commandButton action="#{commenterPlatBean.doInsert()}" value="Commenter" />
+			
+			<c:forEach items="#{commenterPlatBean.lsCommentaire}" var="inst" varStatus="pos">
+			
+			<h:inputText value="#{inst}" />
+		</c:forEach>
+				
+			</h:form>
+		
+
+	</ui:define>
+</ui:composition>

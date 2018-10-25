@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1280.0" styleClass="parent" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.b3.esprit1718b3tourism.app.client.gui.ChartTripsController">
+   <children>
+      <AnchorPane fx:id="TM" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1280.0" />
+      <Pane layoutX="40.0" layoutY="358.0" opacity="0.6" prefHeight="342.0" prefWidth="1200.0" style="-fx-background-color: grey; -fx-background-radius: 45;" />
+      <TableView fx:id="tv1" layoutY="-5.0" opacity="0.6" prefHeight="364.0" prefWidth="1280.0">
+        <columns>
+          <TableColumn fx:id="tc11" minWidth="0.0" prefWidth="0.0" text="id" />
+          <TableColumn fx:id="tc12" prefWidth="181.0" text="Home country" />
+            <TableColumn fx:id="tc13" prefWidth="127.0" text="Destination country" />
+            <TableColumn fx:id="tc14" prefWidth="105.0" text="Destination city" />
+            <TableColumn fx:id="tc15" prefWidth="75.0" text="Price" />
+            <TableColumn fx:id="tc16" prefWidth="46.0" text="Places" />
+            <TableColumn fx:id="tc17" prefWidth="230.0" text="Depart date" />
+            <TableColumn fx:id="tc18" prefWidth="230.0" text="Return date" />
+            <TableColumn fx:id="tc19" prefWidth="144.0" text="Hotel" />
+            <TableColumn fx:id="tc10" prefWidth="140.0" text="Airline company" />
+        </columns>
+      </TableView>
+      <JFXButton fx:id="b1" layoutX="350.0" layoutY="600.0" onAction="#gotoUI" prefHeight="50.0" prefWidth="131.0" style="-fx-background-radius: 45; -fx-background-color: red;" text="View Stats">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="b11" layoutX="730.0" layoutY="600.0" prefHeight="50.0" prefWidth="120.0" style="-fx-background-radius: 45; -fx-background-color: red;" text="Return">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

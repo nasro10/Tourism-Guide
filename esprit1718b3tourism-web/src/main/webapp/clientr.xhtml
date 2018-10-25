@@ -1,0 +1,62 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/templateClient/clienthotel.xhtml"
+                xmlns:p="http://java.sun.com/jsf/html">
+
+	<ui:define name="pageTitle">
+			</ui:define>
+	<ui:define name="pageContent">
+		
+
+		<div class="centredZone">
+			<br />
+			
+			<br />
+
+<h:form>
+        <h:dataTable  var="c" value="#{hotels.cli}"  border="1" styleClass="table table-striped">
+		<h:column >
+<f:facet name="header">HotelName</f:facet>
+		<h:outputText  value= "#{c.hotelName} "  />
+		</h:column>
+		
+		<h:column>
+		<f:facet name="header">RoomNumber</f:facet>
+		<h:outputText value= "#{c.roomNbr} "  />
+		</h:column>
+		
+		<h:column >
+		<f:facet name="header">Stars</f:facet>
+		<h:outputText value= "#{c.stars} "  />
+		</h:column>
+		
+		<h:column >
+				<f:facet name="header">Phone</f:facet>
+		
+		<h:outputText value= "#{c.phone} "  />
+		</h:column>
+		
+		<h:column>
+		<f:facet name="header">Country</f:facet>
+		<h:outputText value="#{c.country}" />
+		</h:column>
+		
+		<h:column >
+			<f:facet name="header">State</f:facet>
+		
+		<h:outputText value= "#{c.state} "  />
+		</h:column>
+		
+		<h:column>
+		<f:facet name="header">Hotel Manager</f:facet>
+		<h:outputText value="#{c.hotelmanager.name}" />
+		</h:column>
+		
+		<h:column>
+		<f:facet name="header">Description</f:facet>
+		<h:outputText value="#{c.description}" />
+		</h:column>
+		
+</h:dataTable></h:form></div></ui:define></ui:composition>

@@ -1,0 +1,43 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/template.xhtml"
+	 xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="pageTitle">
+				Dish
+			</ui:define>
+	<ui:define name="pageContent">
+
+			<h:form>
+		    <p:dataTable id="checkboxDT" var="plat" value="#{commandedDishClientBean.lsPlat}" 
+		    selection="#{commandedDishClientBean.platSelected}" rowKey="#{plat.idPlat}" style="margin-bottom:0">
+        <f:facet name="header">
+           Dishes
+        </f:facet>
+        <p:column selectionMode="single" style="width:16px;text-align:center"/>
+	<p:column headerText="Dish Name">
+        <h:outputText value="#{plat.platName}" />
+    	</p:column>
+    	<p:column headerText="Type">
+        <h:outputText value="#{plat.type}" />
+    	</p:column>
+    	  <p:column headerText="Dish Price">
+        <h:outputText value="#{plat.price}" />
+    	</p:column>
+	    	<p:column headerText="Command">
+        <h:commandButton action="#{commandedDishClientBean.commander()}" value="command" />
+    	</p:column>
+	
+       
+    </p:dataTable>
+ 
+		<h:commandButton action="#{commandedDishClientBean.passPaiement()}" value="Payer" />
+	
+
+			</h:form>
+		
+
+	</ui:define>
+</ui:composition>

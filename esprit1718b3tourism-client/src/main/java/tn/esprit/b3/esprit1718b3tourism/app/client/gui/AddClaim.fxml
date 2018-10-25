@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="reclamationpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="679.0" prefWidth="1279.0" stylesheets="@NewFile.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.b3.esprit1718b3tourism.app.client.gui.AddClaimController">
+   <children>
+      <JFXTextArea fx:id="claimAr" layoutX="423.0" layoutY="296.0" prefHeight="134.0" prefWidth="433.0" />
+      <JFXButton id="BTNS" fx:id="ajouter" layoutX="564.0" layoutY="509.0" onAction="#ajouter" prefHeight="55.0" prefWidth="101.0" style="-fx-background-color: #00a9e7;" text="ADD" textFill="WHITE" />
+      <Label layoutX="66.0" layoutY="70.0" prefHeight="53.0" prefWidth="311.0" text="write your Claim :">
+         <font>
+            <Font size="36.0" />
+         </font></Label>
+      <JFXComboBox fx:id="cb" layoutX="166.0" layoutY="159.0" prefHeight="25.0" prefWidth="182.0" />
+      <Label layoutX="52.0" layoutY="159.0" prefHeight="25.0" prefWidth="94.0" text="About:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="acc" layoutX="1077.0" layoutY="32.0" onAction="#accueil" prefHeight="35.0" prefWidth="94.0" style="-fx-background-color: #D23646;" text="Acceuil" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

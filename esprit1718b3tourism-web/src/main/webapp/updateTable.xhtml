@@ -1,0 +1,32 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/templateClient/essai3.xhtml">
+
+	<ui:define name="pageTitle">
+			Update Table
+			</ui:define>
+	<ui:define name="pageContent">
+
+		<div class="centredZone">
+			
+			<h:form>
+				<h:panelGrid columns="2" styleClass="centredForm">
+				<h:outputText value="numero de la table" />
+				<h:inputText value="#{tableBean.selectedTable.number}" />
+				<h:outputText value="nombre de place" />
+				<h:inputText value="#{tableBean.selectedTable.places}" />
+				<h:outputText value="description" />
+				<h:inputText value="#{tableBean.selectedTable.description}" />
+				<h:outputText value="available" />
+				<h:inputText value="#{tableBean.selectedTable.available}" />
+				<h:commandButton action="#{tableBean.doUpdate()}" value="Update" />
+				
+				<h:commandButton action="#{updateTableBean.afficher()}" value="Back" />
+				</h:panelGrid>
+			</h:form>
+		</div>
+
+	</ui:define>
+</ui:composition>

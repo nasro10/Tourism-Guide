@@ -1,0 +1,33 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/templateClient/essai3.xhtml">
+
+	<ui:define name="pageTitle">
+				Paiemment
+			</ui:define>
+	<ui:define name="pageContent">
+
+	
+		
+			<h:form>
+			<h:panelGrid columns="2">
+				<h:outputText value="Votre facture est" />
+				<h:inputText value="#{paiementClientBean.facture}" />
+				<h:outputText value="Le nombre de point de fidélité est" />
+				<h:inputText value="#{paiementClientBean.point}" />
+				<h:outputText value="Veuiller choisir le taux de redicution" />
+				<h:inputText value="#{paiementClientBean.reduction}" />
+				<h:commandButton action="#{paiementClientBean.factureFinal()}" value="Payer" />
+				<br>
+				<h:outputText value="La nouvelle facture est" />
+				<h:inputText value="#{paiementClientBean.prixFinal}" />
+				</br>
+				<h:commandButton action="#{paiementClientBean.passAvis()}" value="your opnion is important for us" />
+				</h:panelGrid>
+			</h:form>
+		
+
+	</ui:define>
+</ui:composition>

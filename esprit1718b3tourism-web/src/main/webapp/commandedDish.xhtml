@@ -1,0 +1,28 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/RestaurantManager.xhtml"
+    xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="pageTitle">
+				dish
+			</ui:define>
+	<ui:define name="pageContent">
+
+<h:form>
+		<h:selectOneMenu value="#{calculRecetteBean.commandedDishSelected}">
+
+		<f:selectItems value="#{calculRecetteBean.ls1}" var="c"
+		itemLabel="#{c.date}" itemValue="#{c.id}" />
+		</h:selectOneMenu>
+		
+		<h:commandButton action="#{calculRecetteBean.afficherDishSelected()}" value="Voir Bilan " />
+		
+		
+		
+		
+		</h:form>
+		
+	</ui:define>
+</ui:composition>

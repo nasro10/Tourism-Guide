@@ -1,0 +1,65 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui"
+	     template="/facelets/template.xhtml">
+	     
+	     <meta charset="utf-8"/>
+      
+     <meta charset="utf-8"/>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+     
+      <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources1/css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      
+	<ui:define name="title">login</ui:define>
+	<ui:define name="content">
+	
+	<h:form>
+<table align="center">
+             <tr>
+			<td>
+			<h:outputText value="Start From:" /></td>
+			<td><p:calendar value="#{roomBean.p.date_deb}" showOn="button"></p:calendar>  </td>
+			</tr>
+			
+			<tr>
+			<td>
+			<h:outputText value="End Date:" /></td>
+			<td><p:calendar value="#{roomBean.p.date_fin}" showOn="button"></p:calendar>  </td>
+			</tr>
+			
+			<tr>
+			<td>
+			<h:outputText value="Promotion:" /></td>
+			<td><p:inputNumber  value="#{roomBean.p.prixPro}" symbol="%" 
+                                symbolPosition="s" emptyValue="sign"> 
+                                </p:inputNumber></td>
+			</tr>
+			
+			<tr>
+			<td>
+			<h:outputText value="Description:" /></td>
+			<td><h:inputText value="#{roomBean.p.description}" /></td>
+			</tr>
+			
+			<tr>
+			<td>
+			<h:commandButton action="#{roomBean.doPromo()}" value="AddPromo" />
+			</td>
+			</tr>
+
+</table>
+
+</h:form>
+	
+	</ui:define>
+	
+	</ui:composition>
+	

@@ -1,0 +1,37 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/template.xhtml"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="pageTitle">
+				LOGIN PAGE
+			</ui:define>
+	<ui:define name="pageContent">
+
+		<div class="centredZone">
+			
+			<h:form>
+			 <h:panelGrid id="grid" columns="2" cellpadding="5">		
+   		 <p:outputLabel for="button" value="Date Debut:" />
+        <p:calendar id="button" value="#{promotionDishBean.dateDebut}" showOn="button" />
+ 		<h:message for="button" errorClass="errorMessage" /> <!-- Message for username -->
+							
+   		 <p:outputLabel for="button" value="Date Fin:" />
+        <p:calendar id="button1" value="#{promotionDishBean.dateFin}" showOn="button" />
+        <h:message for="button1" errorClass="errorMessage" /> <!-- Message for username -->	
+        <h:outputText value="le poucentage est :" />
+		<h:inputText value="#{promotionDishBean.pourcentage}" />
+		 </h:panelGrid>
+		 <h:messages styleClass="errorMessage" />
+	 <h:commandButton actionListener="#{promotionDishBean.doInsert()}" value="Passer en promotion" update="grid"/>
+	 <h:commandButton action="#{promotionPlatBean.passPromo()}" value="Back" />
+
+	 
+	 		</h:form>
+	 		
+		</div>
+
+	</ui:define>
+</ui:composition>

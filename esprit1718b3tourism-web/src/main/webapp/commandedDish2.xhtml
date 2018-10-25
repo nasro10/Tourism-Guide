@@ -1,0 +1,46 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/template.xhtml"
+    xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="pageTitle">
+				dish
+			</ui:define>
+	<ui:define name="pageContent">
+
+<h:form>
+	
+		
+		<p:dataTable var="car" value="#{calculRecetteTabBean.ls5}">
+		<p:column headerText="Dish Name">
+        <h:outputText value="#{car.platName}" />
+    	</p:column>
+    	<p:column headerText="Dish Price">
+        <h:outputText value="#{car.price}" />
+    	</p:column>
+    	  <p:column headerText="IMC">
+        <h:outputText value="#{car.imc}" />
+    	</p:column>
+		</p:dataTable>
+		<h:outputText value="le: " />
+		<h:inputText value="#{calculRecetteTabBean.dateRecette}" />
+		<h:commandButton action="#{calculRecetteTabBean.afficher()}" value="Bilan du jour" />
+		<h:panelGrid columns="2">
+		<h:outputText value="La recette du jour est: " />
+		<h:inputText value="#{calculRecetteTabBean.gain}" />
+		<h:outputText value="Ajourd'hui vous avez dépenser: " />
+		<h:inputText value="#{calculRecetteTabBean.cout}" />
+		<h:outputText value="Le gain du jour est: " />
+		<h:inputText value="#{calculRecetteTabBean.gainNet}" />
+		
+		
+		</h:panelGrid>
+		<h:commandButton action="#{calculRecetteTabBean.refreshLine()}" value="Refresh" />
+		<p:chart type="line" model="#{calculRecetteTabBean.dateModel}" style="height:400px;"/>
+		
+		</h:form>
+		
+	</ui:define>
+</ui:composition>

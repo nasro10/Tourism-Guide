@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="474.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.b3.esprit1718b3tourism.app.client.gui.CrudStock2Controller">
+   <children>
+      <JFXComboBox fx:id="comboProductName" layoutX="252.0" layoutY="163.0" onAction="#returnStock" prefHeight="25.0" prefWidth="138.0" />
+      <Label layoutX="192.0" layoutY="167.0" text="Nom" />
+      <Label layoutX="300.0" layoutY="237.0" text="Needed" />
+      <JFXTextField fx:id="quantityNeeded" layoutX="382.0" layoutY="226.0" />
+      <JFXButton fx:id="btnEnregister" layoutX="118.0" layoutY="370.0" onAction="#enregisterProduct" style="-fx-background-color: pink;" text="Enregistrer" />
+      <Label layoutX="30.0" layoutY="237.0" text="Stock" />
+      <JFXTextField fx:id="txtQuantityStock" layoutX="84.0" layoutY="233.0" />
+      <JFXButton fx:id="btnUpdateProductQuantity" layoutX="373.0" layoutY="370.0" onAction="#updateProductQuantity" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: pink;" text="Update" />
+   </children>
+</AnchorPane>

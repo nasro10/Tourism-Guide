@@ -1,0 +1,56 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui"
+	     template="/facelets/template.xhtml">
+	     
+	     <meta charset="utf-8"/>
+      
+     <meta charset="utf-8"/>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+     
+      <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources1/css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      
+	<ui:define name="title">login</ui:define>
+	<ui:define name="content">
+	
+	<h:form>
+	<h:panelGrid>
+		<h:outputText value="HotelName: " />
+	    <h:inputText value="#{hotels.hotelupdate.hotelName}" />
+	    		<h:outputText value="HotelManager Name: " />
+		<h:inputText value="#{hotels.hotelupdate.hotelmanager.name}" />
+				<h:outputText value="Hotel stars: " />
+		
+		<h:inputText value="#{hotels.hotelupdate.stars}" />
+				<h:outputText value="Hotel ROOMS NUMBER: " />
+		
+		<h:inputText value="#{hotels.hotelupdate.roomNbr}" />
+				<h:outputText value="COUNTRY: " />
+		
+		<h:inputText value="#{hotels.hotelupdate.country}" />
+						<h:outputText value="STATE: " />
+		
+		<h:inputText value="#{hotels.hotelupdate.state}" />
+						<h:outputText value="DESCRIPTION: " />
+		
+		<h:inputText value="#{hotels.hotelupdate.description}" />
+		<h:commandButton action="#{hotels.doUpdate()}" value="UPDATE" />
+		
+	
+	
+	</h:panelGrid>
+
+</h:form>
+	
+	</ui:define>
+	
+	</ui:composition>
+	

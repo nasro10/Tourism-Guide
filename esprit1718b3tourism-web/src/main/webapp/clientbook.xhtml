@@ -1,0 +1,71 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/templateClient/clienthotel.xhtml"
+                xmlns:p="http://java.sun.com/jsf/html">
+
+	<ui:define name="pageTitle">
+			</ui:define>
+	<ui:define name="pageContent">
+		
+
+		<div class="centredZone">
+			<br />
+			
+			<br />
+			<h:form>
+<h3>Liste des chambres:</h3>
+<h:dataTable var="r" value="#{roomBean.available}" border="1" styleClass="table table-striped">
+
+<h:column>
+<f:facet name="header">HotelName</f:facet>
+<h:outputText value="#{r.hotel.hotelName}" />
+</h:column>
+
+<h:column>
+<f:facet name="header">HotelManager Name</f:facet>
+<h:outputText value="#{r.hotelManager.name}" />
+</h:column>
+
+<h:column>
+<f:facet name="header">Country</f:facet>
+<h:outputText value="#{r.hotel.country}" />
+</h:column>
+
+<h:column>
+<f:facet name="header">Type</f:facet>
+<h:outputText value="#{r.type}" />
+</h:column>
+
+<h:column>
+<f:facet name="header">VIP</f:facet>
+<h:outputText value="#{r.vip}" />
+</h:column>
+
+<h:column>
+<f:facet name="header">Price</f:facet>
+<h:outputText value="#{r.price}" />
+</h:column>
+
+
+
+<h:column>
+<f:facet name="header">Phone</f:facet>
+
+<h:outputText value="#{r.hotel.phone}" />
+</h:column>
+
+<h:column>
+		<f:facet name="header">Book</f:facet>
+		<p:commandButton value="Book" action="#{roomBean.Bookin(r)}"></p:commandButton>
+		</h:column>
+
+</h:dataTable>
+
+
+</h:form>
+		
+			</div>
+			
+			</ui:define></ui:composition>

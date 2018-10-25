@@ -1,0 +1,75 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui"
+	     template="/facelets/template.xhtml">
+	     
+	     <meta charset="utf-8"/>
+      
+     <meta charset="utf-8"/>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+     
+      <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources1/css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      
+	<ui:define name="content">
+	
+	
+	<h:form >
+	  <h:dataTable class="highlight centered  blue-grey lighten-2" var="i" value="#{claimBean.note}"  border="1" >
+		<h:column >
+<f:facet name="header">Claimer Name</f:facet>
+		<h:outputText  value= "#{i.claimer.name} "  />
+		</h:column>
+		
+		<h:column>
+		<f:facet name="header">Claimer Email</f:facet>
+		<h:outputText value= "#{i.claimer.mail} "  />
+		</h:column>
+		
+		<h:column >
+		<f:facet name="header">Claim Date</f:facet>
+		<h:outputText value= "#{i.date} "  />
+		</h:column>
+		
+		<h:column >
+				<f:facet name="header">Status</f:facet>
+		
+		<h:outputText value= "#{i.status} "  />
+		</h:column>
+		
+		<h:column>
+		<f:facet name="header">Text</f:facet>
+		<h:outputText value="#{i.text}" />
+		</h:column>
+		
+		
+		<h:column>
+		<f:facet name="header">Accept</f:facet>
+		<p:commandButton value="Accept" actionListener ="#{claimBean.accept(i)}" styleClass="btn-small green darken-4"></p:commandButton>
+		</h:column>
+		
+		<h:column>
+				<f:facet name="header">refuse</f:facet>
+		
+		<p:commandButton value="Refuser"  actionListener ="#{claimBean.refuser(i)}" ></p:commandButton>
+		
+		</h:column>
+		
+		</h:dataTable>
+		
+		
+		</h:form>
+		
+		
+		</ui:define>
+		
+	
+	</ui:composition>
+	

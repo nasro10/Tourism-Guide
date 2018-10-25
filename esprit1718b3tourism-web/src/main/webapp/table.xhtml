@@ -1,0 +1,62 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/template.xhtml"
+	
+	 xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="pageTitle">
+				
+			</ui:define>
+	<ui:define name="pageContent">
+
+		
+			<h:form>
+		 <p:dataTable id="checkboxDT" var="table" value="#{tableBean.lsTable}" 
+		    selection="#{tableBean.selectedTable}" rowKey="#{table.idTable}" style="margin-bottom:0">
+        <f:facet name="header">
+            Checkbox
+        </f:facet>
+        <p:column selectionMode="single" style="width:16px;text-align:center"/>
+		<p:column headerText="Numero">
+        <h:outputText value="#{table.number}" />
+    	</p:column>
+    	<p:column headerText="Places">
+        <h:outputText value="#{table.places}" />
+    	</p:column>
+    	  <p:column headerText="Description">
+        <h:outputText value="#{table.description}" />
+    	</p:column>
+    	 <p:column headerText="Available">
+        <h:outputText value="#{table.available}" />
+    	</p:column>
+    	<p:column headerText="Update">
+        <h:commandButton action="#{tableBean.PassUpdate()}" value="Update" />
+    	</p:column>
+    	 <p:column headerText="Delete">
+        <h:commandButton action="#{tableBean.doDelete()}" value="Delete" />
+    	</p:column>
+		 </p:dataTable>
+			
+			 <h:commandButton action="#{tableBean.afficher()}" value="afficher" />
+				<h:panelGrid columns="2" styleClass="centredForm">
+				
+				<h:outputText value="numero de la table" />
+				<h:inputText value="#{tableBean.table.number}" />
+				<h:outputText value="nombre de place" />
+				<h:inputText value="#{tableBean.table.places}" />
+				<h:outputText value="description" />
+				<h:inputText value="#{tableBean.table.description}" />
+				<h:outputText value="available" />
+				<h:inputText value="#{tableBean.table.available}" />
+				<h:commandButton action="#{tableBean.doInsert()}" value="ajouter" />
+				
+				
+				</h:panelGrid>
+			</h:form>
+			
+		
+
+	</ui:define>
+</ui:composition>

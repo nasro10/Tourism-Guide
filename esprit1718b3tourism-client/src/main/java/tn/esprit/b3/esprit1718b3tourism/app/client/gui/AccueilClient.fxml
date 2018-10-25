@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1380.0" stylesheets="@css/common.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.b3.esprit1718b3tourism.app.client.gui.AccueilClientController">
+   <children>
+      <VBox id="side_nav" style="-fx-background-color: #b00805;">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" style="-fx-background-color: white;">
+               <children>
+                  <FontAwesomeIcon fill="#b00805" iconName="DIAMOND" size="1.5em" stroke="#b00805" strokeLineCap="ROUND" strokeType="INSIDE" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #b00805; -fx-font-size: 1.5em; -fx-font-weight: bold;" text="Version 9">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefWidth="150.0" style="-fx-border-width: 0 0 0 5px; -fx-border-color: white;">
+               <children>
+                  <FontAwesomeIcon fill="WHITE" iconName="TH" size="1.2em" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white; -fx-font-size: 1.3em;" text="Dashboard" wrappingWidth="100.0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefWidth="150.0" style="-fx-border-width: 0 0 0 5px; -fx-border-color: white;">
+               <children>
+                  <FontAwesomeIcon fill="WHITE" iconName="COPY" size="1.2em" HBox.hgrow="ALWAYS" />
+                  <Text fx:id="book" onMouseClicked="#book" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white; -fx-font-size: 1.3em;" text="Booking" wrappingWidth="100.0" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox fx:id="hb3" alignment="CENTER_LEFT" onMouseClicked="#gotochartall" prefWidth="150.0" style="-fx-border-width: 0 0 0 5px; -fx-border-color: white;">
+               <children>
+                  <FontAwesomeIcon fill="WHITE" iconName="TABLE" size="1.2em" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white; -fx-font-size: 1.3em;" text="My Trips" wrappingWidth="100.0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefWidth="150.0" style="-fx-border-width: 0 0 0 5px; -fx-border-color: white;">
+               <children>
+                  <FontAwesomeIcon fill="WHITE" iconName="SIMPLYBUILT" size="1.2em" />
+                  <Text fx:id="cl" onMouseClicked="#claim" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white; -fx-font-size: 1.3em;" text="Reclamation" wrappingWidth="100.0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefWidth="150.0" style="-fx-border-width: 0 0 0 5px; -fx-border-color: white;">
+               <children>
+                  <FontAwesomeIcon fill="WHITE" iconName="CALENDAR" size="1.2em" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white; -fx-font-size: 1.3em;" text="Disconnect" wrappingWidth="100.0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox style="-fx-background-color: #242a31;" HBox.hgrow="ALWAYS">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" style="-fx-background-color: #b00805;">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="30.0" style="-fx-background-color: white; -fx-background-radius: 100%;">
+                     <graphic>
+                        <FontAwesomeIcon fill="#b30a0a" iconName="BOLT" />
+                     </graphic>
+                     <effect>
+                        <DropShadow height="20.0" radius="9.5" width="20.0" />
+                     </effect>
+                  </Button>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 14px; -fx-fill: #ffffff;" text="Dashboard">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Text>
+                  <HBox alignment="CENTER_RIGHT" onMouseClicked="#claim" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox style="-fx-background-color: white;">
+                           <children>
+                              <TextField prefWidth="150.0" promptText="search" style="-fx-background-color: transparent;" HBox.hgrow="ALWAYS" />
+                              <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="30.0" style="-fx-background-color: transparent;">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="#bc151c" iconName="SEARCH" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <FontAwesomeIcon fill="WHITE" iconName="TH" size="1.2em">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </FontAwesomeIcon>
+                        <FontAwesomeIcon fill="WHITE" iconName="BELL_O" size="1.2em">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </FontAwesomeIcon>
+                        <FontAwesomeIcon fill="WHITE" iconName="USER" size="1.2em">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </FontAwesomeIcon>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+            <HBox>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <children>
+                  <VBox>
+                     <children>
+                        <Pane />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Pane />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Pane />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Pane />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+            <HBox VBox.vgrow="ALWAYS">
+               <children>
+                  <HBox HBox.hgrow="ALWAYS">
+                     <children>
+                        <VBox prefWidth="160.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Pane prefWidth="220.0" VBox.vgrow="NEVER">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="9.0" layoutY="9.0" style="-fx-background-color: white; -fx-background-radius: 10px;">
+                                       <padding>
+                                          <Insets top="100.0" />
+                                       </padding>
+                                       <children>
+                                          <Text fx:id="txtWolf" onMouseClicked="#PassImcClients" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #eb4a46; -fx-font-size: 1.4em;" text="Wolf And Rubbit">
+                                             <VBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #eb4a46;" text="                                                                               ">
+                                             <VBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #eb4a46;" text="       ">
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <HBox style="-fx-background-color: #b00805;">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" />
+                                                <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </HBox>
+                                       </children>
+                                       <effect>
+                                          <DropShadow height="10.620000000000001" radius="5.18" width="12.1" />
+                                       </effect>
+                                    </VBox>
+                                    <VBox layoutX="45.0" layoutY="-27.0">
+                                       <children>
+                                          <ImageView fitHeight="160.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                             <image>
+                                                <Image url="@images/i1.jpg" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </VBox>
+                                 </children>
+                              </Pane>
+                              <Pane prefWidth="220.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="9.0" layoutY="9.0" style="-fx-background-color: white; -fx-background-radius: 10px;">
+                                       <padding>
+                                          <Insets top="100.0" />
+                                       </padding>
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #eb4a46; -fx-font-size: 1.4em;" text="Chez Vito">
+                                             <VBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #eb4a46;" text="                                                                              ">
+                                             <VBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #eb4a46;">
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <HBox style="-fx-background-color: #b00805;">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" />
+                                                <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </HBox>
+                                       </children>
+                                       <effect>
+                                          <DropShadow height="10.620000000000001" radius="5.18" width="12.1" />
+                                       </effect>
+                                    </VBox>
+                                    <VBox layoutX="45.0" layoutY="-27.0">
+                                       <children>
+                                          <ImageView fitHeight="160.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                             <image>
+                                                <Image url="@../images/haha.jpg" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </Pane>
+                           </children>
+                        </VBox>
+                        <VBox prefWidth="160.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Pane prefWidth="220.0" VBox.vgrow="NEVER">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="9.0" layoutY="9.0" style="-fx-background-color: white; -fx-background-radius: 10px;">
+                                       <padding>
+                                          <Insets top="100.0" />
+                                       </padding>
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #eb4a46; -fx-font-size: 1.4em;" text="4 Season Hotel">
+                                             <VBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #eb4a46;" text="                                                                                ">
+                                             <VBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #eb4a46;" text="stop just 2 min by walk">
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <HBox style="-fx-background-color: #b00805;">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" />
+                                                <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </HBox>
+                                       </children>
+                                       <effect>
+                                          <DropShadow height="10.620000000000001" radius="5.18" width="12.1" />
+                                       </effect>
+                                    </VBox>
+                                    <VBox layoutX="45.0" layoutY="-27.0">
+                                       <children>
+                                          <ImageView fitHeight="160.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                             <image>
+                                                <Image url="@../images/architecture-four-seasons-Exterior.jpg" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </VBox>
+                                 </children>
+                              </Pane>
+                              <Pane prefWidth="220.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="9.0" layoutY="9.0" style="-fx-background-color: white; -fx-background-radius: 10px;">
+                                       <padding>
+                                          <Insets top="100.0" />
+                                       </padding>
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #eb4a46; -fx-font-size: 1.4em;" text="La Rambla">
+                                             <VBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #eb4a46;" text="                                                                               ">
+                                             <VBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #eb4a46;">
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <HBox style="-fx-background-color: #b00805;">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" />
+                                                <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </HBox>
+                                       </children>
+                                       <effect>
+                                          <DropShadow height="10.620000000000001" radius="5.18" width="12.1" />
+                                       </effect>
+                                    </VBox>
+                                    <VBox layoutX="45.0" layoutY="-27.0">
+                                       <children>
+                                          <ImageView fitHeight="160.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                             <image>
+                                                <Image url="@../images/maxresdefault.jpg" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </Pane>
+                           </children>
+                        </VBox>
+                        <VBox prefWidth="160.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Pane prefWidth="220.0" VBox.vgrow="NEVER">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="9.0" layoutY="9.0" style="-fx-background-color: white; -fx-background-radius: 10px;">
+                                       <padding>
+                                          <Insets top="100.0" />
+                                       </padding>
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #eb4a46; -fx-font-size: 1.4em;" text="Paris">
+                                             <VBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #eb4a46;" text="                                                                               ">
+                                             <VBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #eb4a46;">
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <HBox style="-fx-background-color: #b00805;">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" />
+                                                <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </HBox>
+                                       </children>
+                                       <effect>
+                                          <DropShadow height="10.620000000000001" radius="5.18" width="12.1" />
+                                       </effect>
+                                    </VBox>
+                                    <VBox layoutX="45.0" layoutY="-27.0">
+                                       <children>
+                                          <ImageView fitHeight="160.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                             <image>
+                                                <Image url="@123.jpg" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </VBox>
+                                 </children>
+                              </Pane>
+                              <Pane prefWidth="220.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="9.0" layoutY="9.0" style="-fx-background-color: white; -fx-background-radius: 10px;">
+                                       <padding>
+                                          <Insets top="100.0" />
+                                       </padding>
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #eb4a46; -fx-font-size: 1.4em;" text="Barcelona">
+                                             <VBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #eb4a46;" text="                                                                                ">
+                                             <VBox.margin>
+                                                <Insets left="10.0" right="10.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #eb4a46;">
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Text>
+                                          <HBox style="-fx-background-color: #b00805;">
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" />
+                                                <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </padding>
+                                          </HBox>
+                                       </children>
+                                       <effect>
+                                          <DropShadow height="10.620000000000001" radius="5.18" width="12.1" />
+                                       </effect>
+                                    </VBox>
+                                    <VBox layoutX="45.0" layoutY="-27.0">
+                                       <children>
+                                          <ImageView fitHeight="160.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                                             <image>
+                                                <Image url="@Barcelona.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </Pane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets top="50.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</HBox>

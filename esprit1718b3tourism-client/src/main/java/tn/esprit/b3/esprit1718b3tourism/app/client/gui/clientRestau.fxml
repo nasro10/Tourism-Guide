@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="492.0" prefWidth="417.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.b3.esprit1718b3tourism.app.client.gui.clientRestau">
+   <children>
+      <JFXButton fx:id="btnPassWolf" layoutX="166.0" layoutY="80.0" onAction="#passWolf" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: pink;" text="Visiter" />
+      <Label fx:id="txtLabel" layoutX="52.0" layoutY="84.0" text="wolf and Rubbit" />
+   </children>
+</AnchorPane>

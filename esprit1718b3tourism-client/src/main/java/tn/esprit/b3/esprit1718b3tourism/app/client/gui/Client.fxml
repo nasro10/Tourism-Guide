@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.Rating?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="parent" stylesheets="@NewFile.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.b3.esprit1718b3tourism.app.client.gui.ClientController">
+   <children>
+      <AnchorPane fx:id="Home" prefHeight="200.0" prefWidth="200.0" styleClass="parent">
+         <children>
+            <VBox alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="200.0" styleClass="sidebar">
+               <children>
+                  <HBox prefHeight="50.0" prefWidth="200.0">
+                     <children>
+                        <JFXButton fx:id="Acceuil" onAction="#Acceuil" prefHeight="53.0" prefWidth="200.0" styleClass="setting" text="Acceuil" textFill="WHITE" />
+                     </children></HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <JFXButton fx:id="HotelBooking" minHeight="-Infinity" minWidth="-Infinity" onAction="#HotelBooking" prefHeight="100.0" prefWidth="200.0" styleClass="box" text="Hotel Booking" textFill="WHITE" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <JFXButton fx:id="checkBooking" onAction="#checkBooking" prefHeight="110.0" prefWidth="200.0" text="Check Booking" textFill="WHITE" />
+                     </children></HBox>
+                  <HBox layoutX="10.0" layoutY="110.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <JFXButton fx:id="RestaurantBooking" minHeight="-Infinity" minWidth="-Infinity" onAction="#RestaurantBooking" prefHeight="100.0" prefWidth="200.0" styleClass="box" text="Restaurant Booking" textFill="WHITE" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="210.0" prefHeight="100.0" prefWidth="200.0" />
+                  <HBox layoutX="10.0" layoutY="310.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <JFXButton fx:id="tripBooking" minHeight="-Infinity" minWidth="-Infinity" onAction="#tripBooking" prefHeight="100.0" prefWidth="200.0" styleClass="box" text="Trip Booking" textFill="WHITE" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="410.0" prefHeight="100.0" prefWidth="200.0" />
+                  <HBox layoutX="10.0" layoutY="510.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <JFXButton fx:id="EventBooking" minHeight="-Infinity" minWidth="-Infinity" onAction="#EventBooking" prefHeight="100.0" prefWidth="200.0" styleClass="box" text="Event Booking" textFill="WHITE" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="Hotelpane" prefHeight="600.0" prefWidth="1080.0" translateX="200.0" visible="false">
+         <children>
+            <TableView fx:id="tab1" prefHeight="400.0" prefWidth="1080.0">
+               <columns>
+                  <TableColumn fx:id="nameC" prefWidth="75.0" text="Name" />
+                  <TableColumn fx:id="starC" prefWidth="106.0" text="Stars" />
+                  <TableColumn fx:id="roomnbrC" prefWidth="112.0" text="RoomNbr" />
+                  <TableColumn fx:id="adresseC" prefWidth="134.0" text="Adresse" />
+                  <TableColumn fx:id="StateC" prefWidth="184.0" text="State" />
+                  <TableColumn fx:id="countryC" prefWidth="174.0" text="Country" />
+                  <TableColumn fx:id="PhoneC" prefWidth="111.0" text="Phone" />
+                  <TableColumn fx:id="descC" prefWidth="183.0" text="Description" />
+               </columns>
+            </TableView>
+            <JFXButton fx:id="NextHotel" layoutX="786.0" layoutY="470.0" onAction="#NextHotel" prefHeight="88.0" prefWidth="239.0" style="-fx-background-color: #0260ff; -fx-background-radius: 45;" text="Next" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </JFXButton>
+         </children></AnchorPane>
+      <AnchorPane fx:id="Room" prefHeight="600.0" prefWidth="1080.0" translateX="200.0" visible="false">
+         <children>
+            <JFXButton fx:id="NextRoom" layoutX="770.0" layoutY="442.0" onAction="#NextRoom" prefHeight="88.0" prefWidth="239.0" style="-fx-background-color: #0260ff; -fx-background-radius: 45;" text="Next" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </JFXButton>
+            <TableView fx:id="tab2" layoutX="242.0" layoutY="33.0" prefHeight="335.0" prefWidth="662.0">
+               <columns>
+                  <TableColumn fx:id="typeC" prefWidth="218.0" text="TYPE" />
+                  <TableColumn fx:id="vipC" prefWidth="204.0" text="VIP" />
+                  <TableColumn fx:id="priceC" prefWidth="239.0" text="price" />
+               </columns>
+            </TableView>
+         </children></AnchorPane>
+      <AnchorPane fx:id="Booking" prefHeight="600.0" prefWidth="1080.0" translateX="200.0" visible="false">
+         <children>
+            <Pane layoutX="82.0" layoutY="19.0" opacity="0.92" prefHeight="528.0" prefWidth="430.0" style="-fx-background-color: white; -fx-background-radius: 45;">
+               <children>
+                  <Pane prefHeight="528.0" prefWidth="437.0" style="-fx-background-radius: 45;">
+                     <children>
+                        <DatePicker fx:id="dp1" layoutX="210.0" layoutY="95.0" prefHeight="45.0" prefWidth="213.0" />
+                        <JFXTextField fx:id="tf1" layoutX="210.0" layoutY="324.0" prefHeight="35.0" prefWidth="213.0" />
+                        <Label layoutX="45.0" layoutY="99.0" prefHeight="45.0" prefWidth="121.0" text="Arrival Date">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="45.0" layoutY="314.0" prefHeight="45.0" prefWidth="121.0" text="Night Number">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <JFXButton fx:id="Finish" layoutX="809.0" layoutY="475.0" onAction="#Finish" prefHeight="88.0" prefWidth="239.0" style="-fx-background-color: Green; -fx-background-radius: 45;" text="Finish" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </JFXButton>
+            <Rating fx:id="Hotelrate" layoutX="745.0" layoutY="251.0" />
+            <Label fx:id="lHotelrate" alignment="CENTER" layoutX="759.0" layoutY="312.0" prefHeight="32.0" prefWidth="153.0" textFill="WHITE" />
+         </children></AnchorPane>
+      <AnchorPane fx:id="Progression" layoutX="200.0" layoutY="600.0" prefHeight="200.0" prefWidth="1080.0" visible="false">
+         <children>
+            <HBox layoutX="340.0" layoutY="75.0" prefHeight="50.0" prefWidth="342.0">
+               <children>
+                  <ImageView fx:id="img1" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@clock.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lbl1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="4.0" prefWidth="100.0" translateY="20.0" />
+                  <ImageView fx:id="img2" fitHeight="45.0" fitWidth="45.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@clock.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lbl2" layoutX="60.0" layoutY="33.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="4.0" prefWidth="100.0" translateY="20.0" />
+                  <ImageView fx:id="img3" fitHeight="45.0" fitWidth="45.0" layoutX="160.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@clock.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="tripBookingpane" layoutX="200.0" layoutY="-2.0" prefHeight="800.0" prefWidth="1080.0" visible="false">
+         <children>
+            <TableView fx:id="tv1" layoutY="32.0" prefHeight="385.0" prefWidth="1080.0">
+               <columns>
+                  <TableColumn fx:id="tc11" minWidth="0.0" prefWidth="0.0" text="id" />
+                  <TableColumn fx:id="tc12" prefWidth="112.0" text="Home country" />
+                  <TableColumn fx:id="tc13" prefWidth="121.0" text="Destination country" />
+                  <TableColumn fx:id="tc14" prefWidth="102.0" text="Destination city" />
+                  <TableColumn fx:id="tc15" prefWidth="94.0" text="Price" />
+                  <TableColumn fx:id="tc16" prefWidth="105.0" text="Places" />
+                  <TableColumn fx:id="tc17" prefWidth="200.0" text="Depart date" />
+                  <TableColumn fx:id="tc18" prefWidth="210.0" text="Return date" />
+                  <TableColumn fx:id="tc19" prefWidth="135.0" text="Hotel" />
+                  <TableColumn fx:id="tc10" minWidth="0.0" prefWidth="0.0" text="Airline company" />
+               </columns>
+            </TableView>
+            <JFXButton fx:id="NextTripBooking" layoutX="783.0" layoutY="522.0" onAction="#NextTripBooking" prefHeight="88.0" prefWidth="239.0" style="-fx-background-color: #0260ff; -fx-background-radius: 45;" text="Next" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </JFXButton>
+            <JFXProgressBar fx:id="progbartrip" layoutX="123.0" layoutY="689.0" prefHeight="32.0" prefWidth="899.0" styleClass="progressbar" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="tripBookingpane1" layoutX="200.0" prefHeight="800.0" prefWidth="1080.0" visible="false">
+         <children>
+            <Pane layoutX="51.0" layoutY="25.0" opacity="0.92" prefHeight="512.0" prefWidth="593.0" style="-fx-background-color: white; -fx-background-radius: 45;">
+               <children>
+                  <Pane prefHeight="528.0" prefWidth="593.0" style="-fx-background-radius: 45;">
+                     <children>
+                        <JFXTextField fx:id="tf2" layoutX="287.0" layoutY="195.0" prefHeight="35.0" prefWidth="213.0" />
+                        <Label layoutX="36.0" layoutY="190.0" prefHeight="45.0" prefWidth="121.0" text="Place Number">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <JFXButton fx:id="finishtrip" layoutX="786.0" layoutY="493.0" onAction="#finishtrip" prefHeight="88.0" prefWidth="239.0" style="-fx-background-color: Green; -fx-background-radius: 45;" text="Finish" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </JFXButton>
+            <Rating fx:id="Hotelrate1" layoutX="747.0" layoutY="204.0" prefHeight="35.0" prefWidth="176.0" />
+            <Label fx:id="lHotelrate1" alignment="CENTER" layoutX="761.0" layoutY="268.0" prefHeight="32.0" prefWidth="153.0" textFill="WHITE" />
+            <JFXProgressBar fx:id="progbartrip1" layoutX="37.0" layoutY="696.0" prefHeight="32.0" prefWidth="899.0" progress="0.5" styleClass="progressbar" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="Eventbookingpane" layoutX="200.0" prefHeight="800.0" prefWidth="1080.0" visible="false">
+         <children>
+            <TableView fx:id="tab" layoutX="145.0" layoutY="93.0" prefHeight="243.0" prefWidth="845.0" style="-fx-alignment: #e1e6eb;">
+               <columns>
+                  <TableColumn fx:id="name" prefWidth="100.0" text="Name" />
+                  <TableColumn fx:id="desc" prefWidth="115.0" text="Description" />
+                  <TableColumn fx:id="places" prefWidth="133.0" text="Available places" />
+                  <TableColumn fx:id="status" minWidth="0.0" prefWidth="0.0" text="status" />
+                  <TableColumn fx:id="prices" minWidth="0.0" prefWidth="97.0" text="price" />
+                  <TableColumn fx:id="money" minWidth="0.0" prefWidth="0.0" text="sponsorship money" />
+                  <TableColumn fx:id="colonedebut" prefWidth="200.0" text="begining date" />
+                  <TableColumn fx:id="colonefin" prefWidth="199.0" text="ending date" />
+               </columns>
+            </TableView>
+            <JFXButton fx:id="NextEventBooking" layoutX="784.0" layoutY="621.0" onAction="#NextEventBooking" prefHeight="88.0" prefWidth="239.0" style="-fx-background-color: #0260ff; -fx-background-radius: 45;" text="Next" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="EventBookingpane2" layoutX="200.0" prefHeight="800.0" prefWidth="1080.0" visible="false">
+         <children>
+            <Pane layoutX="61.0" layoutY="73.0" opacity="0.92" prefHeight="512.0" prefWidth="593.0" style="-fx-background-color: white; -fx-background-radius: 45;">
+               <children>
+                  <Pane prefHeight="528.0" prefWidth="593.0" style="-fx-background-radius: 45;">
+                     <children>
+                        <JFXTextField fx:id="tf21" layoutX="287.0" layoutY="195.0" prefHeight="35.0" prefWidth="213.0" />
+                        <Label layoutX="36.0" layoutY="190.0" prefHeight="45.0" prefWidth="121.0" text="Place Number">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <JFXButton fx:id="finishevent" layoutX="796.0" layoutY="541.0" onAction="#finishevent" prefHeight="88.0" prefWidth="239.0" style="-fx-background-color: Green; -fx-background-radius: 45;" text="Finish" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </JFXButton>
+            <Rating fx:id="Hotelrate11" layoutX="757.0" layoutY="252.0" prefHeight="35.0" prefWidth="176.0" />
+            <Label fx:id="lHotelrate11" alignment="CENTER" layoutX="771.0" layoutY="316.0" prefHeight="32.0" prefWidth="153.0" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="restopane" layoutX="200.0" prefHeight="800.0" prefWidth="1080.0" visible="false">
+         <children>
+            <TableView fx:id="tabr" layoutX="167.0" layoutY="58.0" prefHeight="266.0" prefWidth="746.0">
+              <columns>
+                <TableColumn fx:id="namer" prefWidth="196.0" text="Restaurant Name" />
+                <TableColumn fx:id="addressr" prefWidth="159.0" text="Address" />
+                  <TableColumn fx:id="emailr" prefWidth="195.0" text="Email" />
+                  <TableColumn fx:id="phoner" prefWidth="195.0" text="Phone" />
+              </columns>
+            </TableView>
+            <JFXButton fx:id="NextRestaurantBooking" layoutX="761.0" layoutY="537.0" onAction="#NextRestaurantBooking" prefHeight="88.0" prefWidth="239.0" style="-fx-background-color: #0260ff; -fx-background-radius: 45;" text="Next" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="restopane1" layoutX="200.0" prefHeight="800.0" prefWidth="1080.0" visible="false">
+         <children>
+            <TableView fx:id="tab11" layoutX="178.0" layoutY="104.0" prefHeight="232.0" prefWidth="772.0">
+               <columns>
+                  <TableColumn fx:id="columnNumber" prefWidth="155.0" text="Number" />
+                  <TableColumn fx:id="columnPlaces" prefWidth="153.0" text="Places" />
+                  <TableColumn fx:id="columnDescription" prefWidth="249.0" text="Description" />
+                  <TableColumn fx:id="columnAvailable" prefWidth="214.0" text="Available" />
+               </columns>
+            </TableView>
+            <JFXButton fx:id="NextRestaurantBooking1" layoutX="772.0" layoutY="562.0" onAction="#NextRestaurantBooking1" prefHeight="88.0" prefWidth="239.0" style="-fx-background-color: #0260ff; -fx-background-radius: 45;" text="Next" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="restopane2" layoutX="200.0" prefHeight="800.0" prefWidth="1080.0" visible="false">
+         <children>
+            <Pane layoutX="65.0" layoutY="94.0" opacity="0.77" prefHeight="512.0" prefWidth="593.0" style="-fx-background-color: white; -fx-background-radius: 45;">
+               <children>
+                  <Pane prefHeight="528.0" prefWidth="593.0" style="-fx-background-radius: 45;">
+                     <children>
+                        <JFXDatePicker fx:id="dp2" layoutX="275.0" layoutY="190.0" prefHeight="35.0" prefWidth="248.0" />
+                        <Label layoutX="36.0" layoutY="190.0" prefHeight="45.0" prefWidth="121.0" text="Arrival Date">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <JFXButton fx:id="finishresto" layoutX="800.0" layoutY="562.0" onAction="#finishresto" prefHeight="88.0" prefWidth="239.0" style="-fx-background-color: Green; -fx-background-radius: 45;" text="Finish" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </JFXButton>
+            <Rating fx:id="Hotelrate111" layoutX="761.0" layoutY="273.0" prefHeight="35.0" prefWidth="176.0" />
+            <Label fx:id="lHotelrate111" alignment="CENTER" layoutX="775.0" layoutY="337.0" prefHeight="32.0" prefWidth="153.0" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="Room1" layoutX="200.0" prefHeight="800.0" prefWidth="1080.0">
+         <children>
+            <Pane layoutX="209.0" layoutY="35.0" opacity="0.92" prefHeight="528.0" prefWidth="430.0" style="-fx-background-color: white; -fx-background-radius: 45;">
+               <children>
+                  <Pane prefHeight="528.0" prefWidth="437.0" style="-fx-background-radius: 45;">
+                     <children>
+                        <DatePicker fx:id="dp11" layoutX="210.0" layoutY="219.0" prefHeight="45.0" prefWidth="213.0" />
+                        <JFXTextField fx:id="tf11" layoutX="203.0" layoutY="386.0" prefHeight="35.0" prefWidth="213.0" />
+                        <Label layoutX="26.0" layoutY="99.0" prefHeight="45.0" prefWidth="140.0" text="Old Arrival Date">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="20.0" layoutY="386.0" prefHeight="45.0" prefWidth="121.0" text="Night Number">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="20.0" layoutY="219.0" prefHeight="45.0" prefWidth="146.0" text="New Arrival Date">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="resl" layoutX="203.0" layoutY="99.0" prefHeight="45.0" prefWidth="213.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Button fx:id="Update" layoutX="787.0" layoutY="149.0" mnemonicParsing="false" onAction="#Update" prefHeight="70.0" prefWidth="183.0" text="Update">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Button>
+            <Button fx:id="Delete" layoutX="787.0" layoutY="330.0" mnemonicParsing="false" onAction="#Delete" prefHeight="70.0" prefWidth="183.0" text="Delete">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

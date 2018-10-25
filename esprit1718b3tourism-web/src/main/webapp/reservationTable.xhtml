@@ -1,0 +1,29 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	 xmlns:p="http://primefaces.org/ui"
+	template="/template/template.xhtml">
+
+	<ui:define name="pageTitle">
+				Reservation Table
+			</ui:define>
+	<ui:define name="pageContent">
+
+		<div class="centredZone">
+			
+			<h:form>
+		 <h:panelGrid id="grid" columns="2" cellpadding="5">	
+   		<p:outputLabel for="button" value="Date of Booking:" />
+        <p:calendar id="button" value="#{reservationTableBean.dateRes}" showOn="button" />
+        <h:outputText value="The hour of reservation :" />
+		<h:inputText value="#{reservationTableBean.heureRes}" />
+		 <h:outputText value="The number of persons :" />
+		<h:inputText value="#{reservationTableBean.nbPersonne}" />
+		<h:commandButton action="#{reservationTableBean.doInsert()}" value="Book" />
+		</h:panelGrid>
+			</h:form>
+		</div>
+
+	</ui:define>
+</ui:composition>

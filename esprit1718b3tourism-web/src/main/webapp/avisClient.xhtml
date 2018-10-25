@@ -1,0 +1,47 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+		template="/template/template.xhtml">
+
+	<ui:define name="pageTitle">
+				Avis client
+			</ui:define>
+	<ui:define name="pageContent">
+
+			<h:form>
+		  <p:dataTable id="checkboxDT" var="plat" value="#{avisClientBean.lsPlat}" 
+		    selection="#{avisClientBean.platSelected}" rowKey="#{plat.idPlat}" style="margin-bottom:0">
+        <f:facet name="header">
+           Dishes Commanded
+        </f:facet>
+        <p:column selectionMode="single" style="width:16px;text-align:center"/>
+	<p:column headerText="Dish Name">
+        <h:outputText value="#{plat.platName}" />
+    	</p:column>
+    	<p:column headerText="Type">
+        <h:outputText value="#{plat.type}" />
+    	</p:column>
+    	  <p:column headerText="Dish Price">
+        <h:outputText value="#{plat.price}" />
+    	</p:column>
+    	 <p:column headerText="IMC">
+        <h:outputText value="#{plat.imc}" />
+    	</p:column>
+	    <p:column headerText="Like">
+        <h:commandButton action="#{avisClientBean.likePlat()}" value="Like" />
+    	</p:column>
+		 <p:column headerText="Dislike">
+        <h:commandButton action="#{avisClientBean.disLikePlat()}" value="Dislike" />
+    	</p:column>
+    	<p:column headerText="Comment">
+        <h:commandButton action="#{avisClientBean.passCommentaire()}" value="Comment" />
+    	</p:column>
+       
+    </p:dataTable>
+        
+			</h:form>
+	
+	</ui:define>
+</ui:composition>
